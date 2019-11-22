@@ -1,0 +1,92 @@
+.InputCon{
+  display: flex;
+  padding: 1vh;
+  height: 12vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: springgreen;
+}
+
+
+.cocktailInput{
+    background-color:springgreen ;
+    border:2px solid black;
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  width: 80vw;
+  border-radius: 17px 17px 0 0;
+
+}
+
+.input{
+  width: 100%;
+    border-radius:  15px 0 0 0;
+  background-color:springgreen ;
+  color: black;
+  border: none;
+  font-size: large;
+  font-weight: 600;
+  padding: 1vh;
+}
+
+.cocktailInput::placeholder:focus{
+    color: springgreen;
+
+}
+
+.inputBtn{
+  border: none;
+  background-color: springgreen;
+  color:black;
+  margin:0;
+  padding: 1vh;
+  border-radius: 0 15px 0 0;
+
+}
+
+.inputBtn:focus{
+  background-color: black;
+  color: springgreen;
+  outline: none;
+}
+
+.input:focus{
+  color: springgreen;
+  outline: none;
+  background-color: black;
+} 
+
+.fieldset{
+width: auto;
+border: solid 2px springgreen;}
+
+.autoComplete{
+  position: relative;
+  height: auto;
+  background-color: black;
+  color: springgreen;
+  border:1px solid springgreen;
+  border-top: none;
+
+}
+
+.scrollEnable{
+  overflow: scroll;
+  position: absolute;
+  z-index: 3;
+  min-width: 50vw;
+  max-height: 20vh;
+}
+
+.autoComplete:hover{
+  background: springgreen;
+  color: black;
+}
+
+
+
+
+
