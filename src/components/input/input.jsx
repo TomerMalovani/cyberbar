@@ -11,7 +11,7 @@ function Input(props) {
             <Col xs="12">
 
                 <span className="cocktailInput">
-                    <input onChange={(e) => { props.changeInput(e); }} value={props.InputVal} className="input" type="text" placeholder="your cocktail"></input>
+                    <input onChange={(e) => { props.changeInput(e) }} value={props.InputVal} className="input" type="text" placeholder="your cocktail"></input>
                     <input onClick={props.btnClick} type="button" value="cookup" className="inputBtn" />
                 </span>
                 {props.autoComplete !== undefined && props.InputVal !== "" && props.autoComplete !== null &&

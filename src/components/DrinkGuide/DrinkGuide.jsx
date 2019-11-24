@@ -21,7 +21,7 @@ function DrinkGuide(props) {
                     </Col>
 
                     <Col className="drinkGuideContainer" xs="12" md="6">
-                        <div className="drinkimgBox">
+                        <div className="drinkimgBoxGlass">
                             <legend>glass: </legend>{props.drink.strGlass}
                         </div>
                         <div className="drinkimgBox">

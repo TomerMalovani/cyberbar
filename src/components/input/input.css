@@ -5,8 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  background-color: springgreen;
+  border: 4px solid springgreen;
+  background-color: black;
 }
 
 
@@ -40,6 +40,7 @@
 .inputBtn{
   border: none;
   background-color: springgreen;
+  border-left: black 2px solid;
   color:black;
   margin:0;
   padding: 1vh;

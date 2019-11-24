@@ -3,7 +3,8 @@
     border: 2px solid black;
     background-color: black;
     height: auto;
-    border: 2px solid springgreen;
+    border: 4px solid springgreen;
+    border-collapse: collapse;
 }
 
 .drinkPic{ 
@@ -18,6 +19,14 @@
 .drinkimgBox{
     padding: 1vh;
     border-top: 1px solid springgreen;
+    color:springgreen;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+    border-collapse: collapse;
+}
+
+.drinkimgBoxGlass{
+    padding: 1vh;
     color:springgreen;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 500;

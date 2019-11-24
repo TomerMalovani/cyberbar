@@ -16,12 +16,13 @@ class App extends React.Component {
       DrinkIngredient: [],
       sendIngredient: []
     }
+    this.debounce = this.debounce.bind(this);
     this.getAutoComplete = this.getAutoComplete.bind(this);
     this.btnClick = this.btnClick.bind(this);
   }
+
+
   btnClick() {
-    console.log(this.state.DrinkIngredient)
-    console.log(this.state.choosenDrink);
     this.setState({
       inputVal: "",
       sendDrink: this.state.choosenDrink,
@@ -32,14 +33,14 @@ class App extends React.Component {
     this.setState({ DrinkIngredient: [] });
     let Ingredients = [];
     console.log(this.state.DrinkIngredient);
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i < 15; i++) {
       let NewIngredient = drink["strIngredient" + i];
       let newAmount = drink["strMeasure" + i];
       if (NewIngredient !== null && newAmount !== null) {
         Ingredients.push({ Ingredient: NewIngredient, amount: newAmount });
       }
       else if (NewIngredient !== null) {
-        Ingredients.push({ Ingredient: NewIngredient, amount: "see Instructions" });
+        Ingredients.push({ Ingredient: NewIngredient, amount: "see Instructions/use your logic -_-" });
       }
     }
     this.setState({
@@ -56,6 +57,16 @@ class App extends React.Component {
     })
   }
 
+  debounce = (func, delay) => {
+    let inDebounce
+    return function () {
+      const context = this
+      const args = arguments
+      clearTimeout(inDebounce)
+      inDebounce = setTimeout(() => func.apply(context, args), delay)
+    }
+  }
+
   getAutoComplete() {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.inputVal}`)
       .then(res => res.json()).then(data => {
@@ -67,6 +78,7 @@ class App extends React.Component {
     if (this.state.inputVal === "") {
       this.setState({ autoComplete: undefined })
     }
+
   }
 
   InputChange(e) {
@@ -74,14 +86,15 @@ class App extends React.Component {
     this.getAutoComplete();
   }
 
+
   render() {
 
 
     return (
       <Container className="body" fluid >
-        <Input btnClick={this.btnClick} showDrink={(drink) => { this.showDrink(drink) }} autoComplete={this.state.autoComplete} changeInput={(e) => this.InputChange(e)} InputVal={this.state.inputVal} />
+        <Input btnClick={this.btnClick} showDrink={(drink) => { this.showDrink(drink) }} autoComplete={this.state.autoComplete} changeInput={(e) => { this.InputChange(e) }} InputVal={this.state.inputVal} />
         <DrinkGuide Ingredients={this.state.sendIngredient} drink={this.state.sendDrink} />
-        <div className="drinkimgBox">
+        <div className="drinkimgBoxLogo">
           just because, go 3668
           <img className="Logo" src={logo} />
         </div>
